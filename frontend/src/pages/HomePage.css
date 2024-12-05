@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Touche:wght@500&display=swap');
+
+@font-face {
+  font-family: 'OPTIwtcGoudy-Regular';
+  src: url('../fonts/OPTIwtcGoudy-Regular.ttf') format('truetype');
+}
+
+.homepage {
+  min-height: 100vh;
+  background-color: white;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.homepage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.1) 100%);
+  pointer-events: none;
+}
+
+.content {
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* .flower {
+  width: 50px;
+  height: 50px;
+  background-color: #ff6347;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  animation: spin 4s linear infinite;
+} */
+
+.animated-text {
+  font-size: 2.5rem;
+  animation: slideIn 1s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-50px);
+  color: #1a1a1a;
+}
+
+.animated-text .greeting {
+  font-weight: 600;
+  font-family: 'Touche', sans-serif;
+  /* semi-bold */
+}
+
+.animated-text .username {
+  font-weight: 800; /* bold */
+  display: block;
+  font-family: 'Touche', sans-serif;
+  /* ensures it's on new line */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.app-title {
+  position: absolute;
+  top: 20px;
+  width: 60%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: 'Touche', sans-serif;
+  letter-spacing: 4px;
+  color: #1a1a1a;
+}
+
+.app-title span {
+  display: inline-block;
+  opacity: 0;
+  animation: titleAppear 0.5s ease-out forwards;
+  color: #1a1a1a;
+}
+
+/* Add different delay for each letter */
+.app-title span:nth-child(1) { animation-delay: 0.1s; }
+.app-title span:nth-child(2) { animation-delay: 0.2s; }
+.app-title span:nth-child(3) { animation-delay: 0.3s; }
+.app-title span:nth-child(4) { animation-delay: 0.4s; }
+.app-title span:nth-child(5) { animation-delay: 0.5s; }
+.app-title span:nth-child(6) { animation-delay: 0.6s; }
+.app-title span:nth-child(7) { animation-delay: 0.7s; }
+.app-title span:nth-child(8) { animation-delay: 0.8s; }
+.app-title span:nth-child(9) { animation-delay: 0.9s; }
+.app-title span:nth-child(10) { animation-delay: 1.0s; }
+
+@keyframes titleAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(5deg);
+  }
+  75% {
+    transform: translateY(6px) rotate(-5deg);
+  }
+}
+
+.glowing-sphere {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 20px auto;
+}
+
+.sphere {
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 2s linear infinite;
+  background: transparent;
+}
+
+.sphere::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top: 4px solid purple;
+  filter: blur(2px);
+  animation: glow 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px rgba(128, 0, 128, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(128, 0, 128, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(128, 0, 128, 0.8);
+  }
+}
+
+.gif-container {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.circular-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} 
